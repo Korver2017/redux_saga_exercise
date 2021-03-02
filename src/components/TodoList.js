@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import Todo from './Todo'
 
-const TodoList = (todos, onTodoClick) => {
+const TodoList = ({todos, onTodoClick}) => {
   return (
     <ul>
       {
@@ -10,7 +10,7 @@ const TodoList = (todos, onTodoClick) => {
           <Todo
             key={todo.id}
             {...todo}
-            onClick={onTodoClick (todo.id)}
+            onClick={ () => onTodoClick (todo.id) }
            />
         )
       }
